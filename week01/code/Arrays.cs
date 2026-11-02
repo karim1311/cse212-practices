@@ -12,8 +12,16 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        
+        // i create an array size of length
+        double[] numbers = new double[length];
 
-        return []; // replace this return statement with your own
+        // build a loop, where i multiply the number by the array position +1 and add result to the array
+        for (var i = 0; i < length; i++) {
+            numbers[i] = number * (i+1); 
+        }
+
+        return numbers; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +37,27 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // I create a new list 
+        List<int> rotatedList = new List<int>();
+
+        // I will start adding items to new list starting from desired position 
+        for (var i = data.Count - amount; i < data.Count; i++) {
+
+            rotatedList.Add(data[i]);
+        }
+
+
+        // add remaining numbers and stop before adding the rotated numbers
+        for (var i = 0; i < data.Count - amount; i++)
+        {
+            rotatedList.Add(data[i]);
+        }
+
+        // clear original list
+        data.Clear();
+        // add the rotated list elements to data
+        data.AddRange(rotatedList);
+
     }
 }
